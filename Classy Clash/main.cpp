@@ -11,7 +11,7 @@ int main()
 
     const Texture2D map = LoadTexture("Map/Classy_Clash_map.png");
     const float mapScale{3.5f};
-    Vector2 mapPos{};
+    Vector2 mapPos{0.f,0.f};
 
     SetTargetFPS(60);
     while (!WindowShouldClose())
