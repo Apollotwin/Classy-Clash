@@ -16,3 +16,11 @@ void BaseCharacter::tick(float deltaTime)
     Rectangle dest{screenPos.x, screenPos.y, scale * static_cast<float>(texture.width)/6.0f, scale * static_cast<float>(texture.height)};
     DrawTexturePro(texture,source,dest, Vector2{}, 0.f, WHITE);
 }
+
+void BaseCharacter::SetPosition(int x, int y)
+{
+    screenPos = {
+        x - scale * (0.5f * static_cast<float>(texture.width)/6.0f),
+           y - scale * (0.5f * static_cast<float>(texture.height))
+    };
+}

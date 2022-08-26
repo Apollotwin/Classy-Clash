@@ -5,13 +5,14 @@ class BaseCharacter
 {
 public:
     virtual void tick(float deltaTime);
+    void SetPosition(int x, int y);
     Vector2 GetWorldPos(){return worldPos;}
 
 protected:
     //Texture variables
     Texture2D texture = LoadTexture("characters/knight_idle_spritesheet.png");
-    const Texture2D idle = LoadTexture("characters/knight_idle_spritesheet.png");
-    const Texture2D run = LoadTexture("characters/knight_run_spritesheet.png");
+    Texture2D idle = LoadTexture("characters/knight_idle_spritesheet.png");
+    Texture2D run = LoadTexture("characters/knight_run_spritesheet.png");
     float scale{5.f};
     
     //Movement variables

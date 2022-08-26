@@ -5,14 +5,15 @@ Character::Character(int winWidth, int winHeight)
 {
     screenPos = {
         static_cast<float>(winWidth)/2.0f - scale * (0.5f * static_cast<float>(texture.width)/6.0f),
-       static_cast<float>(winHeight)/2.0f - scale * (0.5f * static_cast<float>(texture.height)),
+       static_cast<float>(winHeight)/2.0f - scale * (0.5f * static_cast<float>(texture.height))
    };
 }
 
 void Character::tick(float deltaTime)
 {
     BaseCharacter::tick(deltaTime);
-    
+
+    //Movement input
     Vector2 direction{};
     if(IsKeyDown(KEY_A)) direction.x -= 1.0f;
     if(IsKeyDown(KEY_D)) direction.x += 1.0f;
