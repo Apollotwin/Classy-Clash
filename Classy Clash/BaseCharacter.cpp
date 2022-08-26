@@ -2,6 +2,8 @@
 
 void BaseCharacter::tick(float deltaTime)
 {
+    worldPosLastFrame = worldPos;
+    
     //Update running time
     runningTime += GetFrameTime();
     if(runningTime >= updateTime)
@@ -23,4 +25,9 @@ void BaseCharacter::SetPosition(int x, int y)
         x - scale * (0.5f * static_cast<float>(texture.width)/6.0f),
            y - scale * (0.5f * static_cast<float>(texture.height))
     };
+}
+
+void BaseCharacter::UndoMovement()
+{
+    worldPos = worldPosLastFrame;
 }

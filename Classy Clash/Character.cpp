@@ -22,8 +22,8 @@ void Character::tick(float deltaTime)
 
     if(Vector2Length(direction) != 0.0f)
     {
-        //Set mapPos = mapPos - direction
-        worldPos = Vector2Subtract(worldPos,Vector2Scale( Vector2Normalize(direction), moveSpeed));
+        //Set worldPos = worldPos - direction
+        worldPos = Vector2Add(worldPos,Vector2Scale( Vector2Normalize(direction), moveSpeed));
         direction.x < 0.f ? rightLeft =-1.f : rightLeft = 1.f;
         texture = run;
     }

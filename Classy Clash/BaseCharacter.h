@@ -7,6 +7,7 @@ public:
     virtual void tick(float deltaTime);
     void SetPosition(int x, int y);
     Vector2 GetWorldPos(){return worldPos;}
+    void UndoMovement();
 
 protected:
     //Texture variables
@@ -21,6 +22,7 @@ protected:
     //Position variables
     Vector2 screenPos{};
     Vector2 worldPos{};
+    Vector2 worldPosLastFrame{};
 
     //Animation variables
     float rightLeft{1.f};
